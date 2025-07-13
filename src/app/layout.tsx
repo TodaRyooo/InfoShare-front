@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Noto_Sans, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const notoSansJP = Noto_Sans_JP({
+  variable: '--font-note-sans-jp',
+  weight: ['400', '700'],
+  style: 'normal',
   subsets: ['latin'],
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const notoSans = Noto_Sans({
+  variable: '--font-note-sans',
+  weight: ['400', '700'],
+  style: 'normal',
   subsets: ['latin'],
 })
 
@@ -23,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+    <html lang="ja">
+      <body className={`${notoSansJP.variable} ${notoSans.variable} antialiased`}>{children}</body>
     </html>
   )
 }
